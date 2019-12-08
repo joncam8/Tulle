@@ -21,7 +21,7 @@
                     <ul>
                         <li><a href="login.php">My Account</a></li>
                         <li><a href="mycart_login.html">My Cart <img src="images/cart_icon.png"> 0 </a></li>
-                       <li><a href="login.php">LogIn</a></li>
+                        <li><a href="login.php">LogIn</a></li>
                         <li><a href="create_account.php">Create Account</a></li>
                     </ul>
                 </nav>
@@ -36,45 +36,15 @@
             
             <div id="header_inner_container">
                 
-                <h1 class="title">Create Account</h1>
+                <h1 class="title">Emailed Successfully</h1>
             </div>
         </header>
         
-        <section id="create_account">
-            <div id="create_account">
-                <h2>Join Us</h2>
+        <section id="e_success">
+            <div id="e_success_container">
+                <h2>We Will Be With Your Shortly</h2>
+                <p>Thank you for filling out the form, you will be contacted within 24hrs to discuss your issues or concerns. You have been sent a conformation to your email. Please use the conformation number provide when contacted. Check <a href="index.html">here</a> to go back to home page. </p>
                 
-                <div>
-                    <?php
-                        $db = mysqli_connect("localhost", "root", "", "useraccounts");
-                        
-                        if(isset($_POST['create']))
-                        {
-                            $name = ($_POST['name']);
-                            $email = ($_POST['email']);
-                            $username = ($_POST['username']);
-                            $password = ($_POST['password']);
-                            
-                            $sql = "INSERT INTO users(name, email, username, password) VALUES('$name', '$email', '$username', '$password')";
-                            mysqli_query($db, $sql);
-                            $_SESSION['message'] = "You are now logged in.";
-                            $_SESSION['username'] = $username;
-                            header("location: myaccount_success.html");
-                        }
-                    ?>
-                </div>
-                
-                <form action="create_account.php" method="post">
-                    <div id="form_input">
-                        <input type="type" name="name" placeholder="Name" required />
-                        <input type="email" name="email" placeholder="Email" required />
-                        <input type="type" name="username" placeholder="Create User ID" required />
-                        <input type="password" name="password" placeholder="Create password" required />   
-                    </div>
-                    <button type="submit" style="float: none;" name="create">Create Account</button>
-                    
-                    <p>Already have an account? <a href="login.php" class="login">Login</a></p>
-                </form>
             </div>
         </section>
         
@@ -101,15 +71,14 @@
                         <li><a href="contact.html">Contact</a></li>
                         <li><a href="mycart_login.html">My Cart</a></li>
                         <li><a href="login.php">Login</a></li>
-                        <li><a href="create_account.php">Create Account</a></li>
+                        
                     </ul>
                 </div>
                 <div class="footer_info" id="acc">
                     <h3>Account</h3>
                     <ul>
                         <li><a href="login.php">My Account</a></li>
-                        <li><a href="login.php">Order History</a></li>
-                        <li><a href="login.php">Wish List</a></li>
+                        <li><a href="create_account.php">Create Account</a></li>
                         <li><a href="newsletter.html">Newsletter</a></li>
                     </ul>
                 </div>
@@ -119,15 +88,15 @@
                     <p>FOLLOW &amp; CONNECT</p>
                     
                     <ul>
-                        <li><a href="http://www.facebook.com" target="_blank"><img src="images/facebook_icon.png"></a></li>
-                        <li><a href="http://www.twitter.com" target="_blank"><img src="images/twitter_icon.png"></a></li>
-                        <li><a href="http://www.linkedin.com" target="_blank"><img src="images/linkedin_icon.png"></a></li>
+                        <li><a href="#"><img src="images/facebook_icon.png"></a></li>
+                        <li><a href="#"><img src="images/twitter_icon.png"></a></li>
+                        <li><a href="#"><img src="images/linkedin_icon.png"></a></li>
                     </ul>
                 </div>  
             </div>
             <div id="bottom_footer">
                 <div id="bottom_footer_container">
-                    <div id="copyright">2019 Copyrights Reserved to Tangled Up In Tulle | Designed &amp; Developed by Jonathan Cameron at <a href="http://www.camcolordesigns.com" target="_blank">Cam Color Designs</a></div>
+                    <div id="copyright">2019 Copyrights Reserved to Tangled Up In Tulle | Designed &amp; Developed by Jonathan Cameron at <a href="www.camcolordesigns.com">Cam Color Designs</a></div>
                 </div>    
             </div>
         </footer>

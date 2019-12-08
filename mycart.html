@@ -4,6 +4,10 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title></title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
         <link rel="stylesheet" href="css/main.css">
     </head>
     
@@ -40,7 +44,7 @@
         <section id="about">
             <div id="about_container">
                 <h2>View My Cart</h2>
-                <p>- You currently do not have anything in your cart. -</p>
+                <p>You currently do not have anything in your cart. Click <a href="shop.html">here</a> to continue shopping.</p>
                 
             </div>
         </section>
@@ -52,8 +56,10 @@
                 <h1>Take advantage of our special deals</h1>
                 <p>Would you like to receive coupons and special sales. To receive these special perks you must sign up to our newsletter by filling out the form below with just your email.</p>
                 
-                <input type="text" placeholder="EMAIL" />
-                <button type="button" value="Subscribe"><a href="#">Subscribe</a></button>
+                <form action="sub.html" method="get">
+                    <input type="email" placeholder="EMAIL" required />
+                    <button type="submit" value="Subscribe">Subscribe</button>
+                </form>
             </div>
         </section>
         
@@ -64,18 +70,16 @@
                     <ul>
                         <li><a href="about.html">About</a></li>
                         <li><a href="contact.html">Contact</a></li>
-                        <li><a href="#">My Cart</a></li>
-                        <li><a href="#">Login</a></li>
-                        <li><a href="#">Create Account</a></li>
-                    </ul>
+                        <li><a href="mycart_login.html">My Cart</a></li>
+                        <li><a href="login.php">Login</a></li>
+                     </ul>   
                 </div>
                 <div class="footer_info" id="acc">
                     <h3>Account</h3>
                     <ul>
-                        <li><a href="#">My Account</a></li>
-                        <li><a href="#">Order History</a></li>
-                        <li><a href="#">Wish List</a></li>
-                        <li><a href="#">Newsletter</a></li>
+                        <li><a href="login.php">My Account</a></li>
+                        <li><a href="create_account.html">Create Account</a></li>
+                        <li><a href="newsletter.html">Newsletter</a></li>
                     </ul>
                 </div>
                 <div class="footer_info" id="soc">
@@ -84,15 +88,15 @@
                     <p>FOLLOW &amp; CONNECT</p>
                     
                     <ul>
-                        <li><a href="#"><img src="images/facebook_icon.png"></a></li>
-                        <li><a href="#"><img src="images/twitter_icon.png"></a></li>
-                        <li><a href="#"><img src="images/linkedin_icon.png"></a></li>
+                        <li><a href="http://www.facebook.com" target="_blank"><img src="images/facebook_icon.png"></a></li>
+                        <li><a href="http://www.twitter.com" target="_blank"><img src="images/twitter_icon.png"></a></li>
+                        <li><a href="http://www.linkedin.com" target="_blank"><img src="images/linkedin_icon.png"></a></li>
                     </ul>
                 </div>  
             </div>
             <div id="bottom_footer">
                 <div id="bottom_footer_container">
-                    <div id="copyright">2019 Copyrights Reserved to Tangled U In Tulle | Designed &amp; Developed by Jonathan Cameron at <a href="www.camcolordesigns.com">Cam Color Designs</a></div>
+                    <div id="copyright">2019 Copyrights Reserved to Tangled Up In Tulle | Designed &amp; Developed by Jonathan Cameron at <a href="www.camcolordesigns.com">Cam Color Designs</a></div>
                 </div>    
             </div>
         </footer>

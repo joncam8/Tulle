@@ -1,40 +1,23 @@
-<!-- <?php
-
-$host = "localhost";
-$user = "root";
-$password = "";
-$db = "useraccounts";
-
-mysqli_connect($host, $user, $password);
-mysqli_select_db($db,$host);
-
-if(isset($_POST['username'])){
-    $username = $_POST['username'];
-    $password = $_POST['password'];
-    
-    $sql = "select * from users where username='".$username."' AND password='".$password."' limit 1";
-    
-    $result = mysqli_query($sql);
-    
-    if(mysqli_num_rows($result) == 1) {
-        echo "You have successfully logged in";
-        exit();
-    }
-    else {
-        echo "You have entered incorrect password";
-        exit();
-    }
-}
-
-?> -->
-
 <!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Account Login</title>
+        
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
         <link rel="stylesheet" href="css/main.css">
+        
+        <style>
+            .cacco a:hover {
+                color:rgba(100, 180, 160, .4);
+                opacity: .9;
+                text-decoration: none;
+            }
+        </style>
     </head>
     
     <body>
@@ -70,14 +53,34 @@ if(isset($_POST['username'])){
             <div id="login_container">
                 <h2>Log Into My Account</h2>
                 
-                <form id="form" action="" method="POST">
+                <?php
+                
+                    if(@$_GET['Empty']==true)
+                    {
+                ?>
+                <div class="alert-danger text-danger text-center py-3" style="max-width:400px; margin:auto;"><?php echo $_GET['Empty'] ?></div>
+                <?php
+                    }
+                ?>
+                
+                <?php
+                
+                    if(@$_GET['Invalid']==true)
+                    {
+                ?>
+                <div class="alert-danger text-danger text-center py-3" style="max-width:400px; margin:auto; animation: 2s easeIn"><?php echo $_GET['Invalid'] ?></div>
+                <?php
+                    }
+                ?>
+                
+                <form id="form" action="myaccount.php" method="POST">
                     <div id="form_input">
                         <input type="type" id="username" placeholder="Username" name="username" />
                         <input type="password" id="password" placeholder="Password" name="password" />
                     </div>
-                    <button type="submit" style="float: none;" name="login_btn"><a href="myaccount.php">Log In</a></button>
-                    <p>Forgot <a href="#" class="uname">Username</a> or <a href="#" class="pass">Password</a>?</p>
-                    <p>Don't have a account? <a href="create_account.php" class="cacc">Create Account</a></p>
+                    <button type="submit" name="login_btn">Log In</button>
+                    <p>Forgot your <a href="forgotpass.php" class="pass">Password</a>?</p>
+                    <p>Don't have a account? <a href="create_account.php" class="cacco" style="color:rgba(100, 180, 160, 1);">Create Account</a></p>
                 </form>
             </div>
         </section>
@@ -90,8 +93,10 @@ if(isset($_POST['username'])){
                 <p>Would you like to receive coupons and special sales. To receive these special perks you must sign up to our newsletter by filling out the form below with just your email.</p>
                 
                 
-                <input type="text" placeholder="EMAIL" />
-                <button type="button" value="Subscribe"><a href="sub.html">Subscribe</a></button>
+                <form action="sub.html" method="get">
+                    <input type="email" placeholder="EMAIL" required />
+                    <button type="submit" value="Subscribe">Subscribe</button>
+                </form>
                 
             </div>
         </section>
@@ -131,20 +136,11 @@ if(isset($_POST['username'])){
             </div>
             <div id="bottom_footer">
                 <div id="bottom_footer_container">
-                    <div id="copyright">2019 Copyrights Reserved to Tangled U In Tulle | Designed &amp; Developed by Jonathan Cameron at <a href="http://www.camcolordesigns.com" target="_blank">Cam Color Designs</a></div>
+                    <div id="copyright">2019 Copyrights Reserved to Tangled Up In Tulle | Designed &amp; Developed by Jonathan Cameron at <a href="http://www.camcolordesigns.com" target="_blank">Cam Color Designs</a></div>
                 </div>    
             </div>
         </footer>
     </div>         
-
-<script>
-   
-    
-    function getInfo() {
-        var username = document.getElementById("username").value;
-        var password = document.getElementById("password").value;
-    }
-</script>        
         
     </body>
-</html
+</html>

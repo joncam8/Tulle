@@ -1,4 +1,31 @@
+<?php
 
+require_once('connection.php');
+session_start();
+
+    if(isset($_POST['login_btn']))
+    {
+        if(empty($_POST['username']) || empty($_POST['password']))
+        {
+            header("location:login.php?Empty= Must fill out the form to login.");
+        }
+        else
+        {
+            $query = "select * from users where username='".$_POST['username']."' and password='".$_POST['password']."'";
+            $result = mysqli_query($con, $query);
+            
+            if(mysqli_fetch_assoc($result))
+            {
+                $_SESSION['User'] = $_POST['username'];
+                header("location:myaccount.php");
+            }
+            else
+            {
+                header("location:login.php?Invalid= Please enter correct user name and password");
+            }
+        }
+    }
+?>
 
 <!DOCTYPE html>
 <html>
@@ -6,6 +33,10 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title></title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
         <link rel="stylesheet" href="css/main.css">
     </head>
     
@@ -38,16 +69,18 @@
             </div>
         </header>
         
-        <section id="about">
-            <div id="about_container">
-                <h2>My Account Information</h2>
+        <section id="myaccount">
+            <div id="myaccount_container">
                 
+                <h2>Your Account Information</h2>
                 
-                
-                <p>This is a dummy account. Your information would be displayed on this page once an account is created.</p>
+                <p>You are now logged in.</p>
+                <p>Click <a href="shop.html">here</a> to continue shopping.</p>
                 
                 
             </div>
+            
+            
         </section>
         
         
@@ -57,8 +90,10 @@
                 <h1>Take advantage of our special deals</h1>
                 <p>Would you like to receive coupons and special sales. To receive these special perks you must sign up to our newsletter by filling out the form below with just your email.</p>
                 
-                <input type="text" placeholder="EMAIL" />
-                <button type="button" value="Subscribe"><a href="sub.html">Subscribe</a></button>
+                <form action="sub.html" method="get">
+                    <input type="email" placeholder="EMAIL" required />
+                    <button type="submit" value="Subscribe">Subscribe</button>
+                </form>
             </div>
         </section>
         
@@ -71,15 +106,14 @@
                         <li><a href="contact.html">Contact</a></li>
                         <li><a href="login.php">My Cart</a></li>
                         <li><a href="login.php">Login</a></li>
-                        <li><a href="create_account.php">Create Account</a></li>
+                        
                     </ul>
                 </div>
                 <div class="footer_info" id="acc">
                     <h3>Account</h3>
                     <ul>
                         <li><a href="login.php">My Account</a></li>
-                        <li><a href="login.php">Order History</a></li>
-                        <li><a href="login.php">Wish List</a></li>
+                        <li><a href="create_account.php">Create Account</a></li>
                         <li><a href="newsletter.html">Newsletter</a></li>
                     </ul>
                 </div>
@@ -97,7 +131,7 @@
             </div>
             <div id="bottom_footer">
                 <div id="bottom_footer_container">
-                    <div id="copyright">2019 Copyrights Reserved to Tangled U In Tulle | Designed &amp; Developed by Jonathan Cameron at <a href="http://www.camcolordesigns.com" target="_blank">Cam Color Designs</a></div>
+                    <div id="copyright">2019 Copyrights Reserved to Tangled Up In Tulle | Designed &amp; Developed by Jonathan Cameron at <a href="http://www.camcolordesigns.com" target="_blank">Cam Color Designs</a></div>
                 </div>    
             </div>
         </footer>

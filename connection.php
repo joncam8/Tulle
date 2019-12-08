@@ -2,9 +2,9 @@
 
     $con = mysqli_connect('localhost', 'root', '', 'useraccounts');
     
-    if(|$con)
+    if(!$con)
     {
-        echo 'Please Check YOur Database Connection';
+        die(' Please Check YOur Database Connection' .mysqli_error());
     }
 
 ?>

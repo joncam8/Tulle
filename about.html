@@ -4,6 +4,10 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title></title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
         <link rel="stylesheet" href="css/main.css">
     </head>
     
@@ -46,6 +50,10 @@
                     
                     <p><strong>Owner</strong><br/><br/>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                 </div>
+                
+                <div id="shop_btn_container">
+                    <button type="button" id="shop_btn_04"><a href="shop.html">Continue Shopping <span id="next">></span></a></button>
+                </div>
             </div>
         </section>
         
@@ -56,8 +64,10 @@
                 <h1>Take advantage of our special deals</h1>
                 <p>Would you like to receive coupons and special sales. To receive these special perks you must sign up to our newsletter by filling out the form below with just your email.</p>
                 
-                <input type="text" placeholder="EMAIL" />
-                <button type="button" value="Subscribe"><a href="sub.html">Subscribe</a></button>
+                <form action="sub.html" method="get">
+                    <input type="email" placeholder="EMAIL" required />
+                    <button type="submit" value="Subscribe">Subscribe</button>
+                </form>
             </div>
         </section>
         
@@ -70,15 +80,14 @@
                         <li><a href="contact.html">Contact</a></li>
                         <li><a href="mycart_login.html">My Cart</a></li>
                         <li><a href="login.php">Login</a></li>
-                        <li><a href="create_account.php">Create Account</a></li>
+                        
                     </ul>
                 </div>
                 <div class="footer_info" id="acc">
                     <h3>Account</h3>
                     <ul>
                         <li><a href="login.php">My Account</a></li>
-                        <li><a href="login.php">Order History</a></li>
-                        <li><a href="login.php">Wish List</a></li>
+                        <li><a href="create_account.php">Create Account</a></li>
                         <li><a href="newsletter.html">Newsletter</a></li>
                     </ul>
                 </div>
@@ -96,7 +105,7 @@
             </div>
             <div id="bottom_footer">
                 <div id="bottom_footer_container">
-                    <div id="copyright">2019 Copyrights Reserved to Tangled U In Tulle | Designed &amp; Developed by Jonathan Cameron at <a href="http://www.camcolordesigns.com" target="_blank">Cam Color Designs</a></div>
+                    <div id="copyright">2019 Copyrights Reserved to Tangled Up In Tulle | Designed &amp; Developed by Jonathan Cameron at <a href="http://www.camcolordesigns.com" target="_blank">Cam Color Designs</a></div>
                 </div>    
             </div>
         </footer>

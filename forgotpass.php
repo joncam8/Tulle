@@ -3,12 +3,14 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title></title>
+        <title>Account Login</title>
+        
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
         <link rel="stylesheet" href="css/main.css">
+        
     </head>
     
     <body>
@@ -21,7 +23,7 @@
                     <ul>
                         <li><a href="login.php">My Account</a></li>
                         <li><a href="mycart_login.html">My Cart <img src="images/cart_icon.png"> 0 </a></li>
-                       <li><a href="login.php">LogIn</a></li>
+                        <li><a href="login.php">LogIn</a></li>
                         <li><a href="create_account.php">Create Account</a></li>
                     </ul>
                 </nav>
@@ -36,44 +38,43 @@
             
             <div id="header_inner_container">
                 
-                <h1 class="title">Create Account</h1>
+                <h1 class="title">Recover Your Account</h1>
             </div>
         </header>
         
-        <section id="create_account">
-            <div id="create_account">
-                <h2>Join Us</h2>
+        <section id="forgotpass">
+            <div id="forgotpass_container">
+                <h2>Let's Find Your Account</h2>
                 
-                <div>
-                    <?php
-                        $db = mysqli_connect("localhost", "root", "", "useraccounts");
-                        
-                        if(isset($_POST['create']))
-                        {
-                            $name = ($_POST['name']);
-                            $email = ($_POST['email']);
-                            $username = ($_POST['username']);
-                            $password = ($_POST['password']);
-                            
-                            $sql = "INSERT INTO users(name, email, username, password) VALUES('$name', '$email', '$username', '$password')";
-                            mysqli_query($db, $sql);
-                            $_SESSION['message'] = "You are now logged in.";
-                            $_SESSION['username'] = $username;
-                            header("location: myaccount_success.html");
-                        }
-                    ?>
-                </div>
+                <?php
                 
-                <form action="create_account.php" method="post">
+                    if(@$_GET['Empty']==true)
+                    {
+                ?>
+                <div class="alert-danger text-danger text-center py-3" style="max-width:400px; margin:auto;"><?php echo $_GET['Empty'] ?></div>
+                <?php
+                    }
+                ?>
+                
+                <?php
+                
+                    if(@$_GET['Invalid']==true)
+                    {
+                ?>
+                <div class="alert-danger text-danger text-center py-3" style="max-width:400px; margin:auto; animation: 2s easeIn"><?php echo $_GET['Invalid'] ?></div>
+                <?php
+                    }
+                ?>
+                
+                <form id="form" action="myaccount.php" method="POST">
+                    <p><strong>Please enter in your email address below.</strong></p>
+                    <br/>
                     <div id="form_input">
-                        <input type="type" name="name" placeholder="Name" required />
-                        <input type="email" name="email" placeholder="Email" required />
-                        <input type="type" name="username" placeholder="Create User ID" required />
-                        <input type="password" name="password" placeholder="Create password" required />   
+                        <input type="type" id="username" placeholder="Username" name="username" />
                     </div>
-                    <button type="submit" style="float: none;" name="create">Create Account</button>
-                    
-                    <p>Already have an account? <a href="login.php" class="login">Login</a></p>
+                    <button type="submit" name="login_btn">Log In</button>
+                    <p>Do your remember your password? <a href="login.php" class="pass">Login</a></p>
+                    <p>Don't have a account? <a href="create_account.php" class="cacco" style="color:rgba(100, 180, 160, 1);">Create Account</a></p>
                 </form>
             </div>
         </section>
@@ -85,10 +86,12 @@
                 <h1>Take advantage of our special deals</h1>
                 <p>Would you like to receive coupons and special sales. To receive these special perks you must sign up to our newsletter by filling out the form below with just your email.</p>
                 
+                
                 <form action="sub.html" method="get">
                     <input type="email" placeholder="EMAIL" required />
                     <button type="submit" value="Subscribe">Subscribe</button>
                 </form>
+                
             </div>
         </section>
         
@@ -99,7 +102,7 @@
                     <ul>
                         <li><a href="about.html">About</a></li>
                         <li><a href="contact.html">Contact</a></li>
-                        <li><a href="mycart_login.html">My Cart</a></li>
+                        <li><a href="login.php">My Cart</a></li>
                         <li><a href="login.php">Login</a></li>
                         <li><a href="create_account.php">Create Account</a></li>
                     </ul>
@@ -134,4 +137,4 @@
     </div>         
         
     </body>
-</html
+</html>

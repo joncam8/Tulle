@@ -4,6 +4,10 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title></title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
         <link rel="stylesheet" href="css/main.css">
     </head>
     
@@ -42,18 +46,20 @@
             <div id="mycart_login_container">
                 <h2>Log In Or Continue As Guest</h2>
                 
-                <form action="mycart.html" method="post">
+                
+                
+                <form action="myaccount.php" method="post">
                     <div id="form_input">
-                        <input type="type" placeholder="Username" required/>
-                        <input type="password" placeholder="Password" required/>
+                        <input type="type" name="username" placeholder="Username" required/>
+                        <input type="password" name="password" placeholder="Password" required/>
                     </div>
-                    <button type="submit">Log In</button>
-                    <p>Forgot <a href="#" class="uname">Username</a> or <a href="#" class="pass">Password</a>?</p>
-                    <p>Don't have a account? <a href="create_account.php" class="cacc">Create Account</a></p>
+                    <button type="submit" name="login_btn">Log In</button>
+                    <p>Forgot your <a href="forgotpass.php" class="pass">Password</a>?</p>
+                    <p>Don't have a account? <a href="create_account.php" class="cacco">Create Account</a></p>
                 </form>
             
             
-            <div id="mycart_login_container2" style="">
+            <div id="mycart_login_container2">
                 
                 
                 <button type="button"><a href="mycart.html">Continue As Quest</a></button>
@@ -69,8 +75,10 @@
                 <h1>Take advantage of our special deals</h1>
                 <p>Would you like to receive coupons and special sales. To receive these special perks you must sign up to our newsletter by filling out the form below with just your email.</p>
                 
-                <input type="text" placeholder="EMAIL" />
-                <button type="button" value="Subscribe"><a href="sub.html">Subscribe</a></button>
+                <form action="sub.html" method="get">
+                    <input type="email" placeholder="EMAIL" required />
+                    <button type="submit" value="Subscribe">Subscribe</button>
+                </form>
             </div>
         </section>
         
@@ -109,7 +117,7 @@
             </div>
             <div id="bottom_footer">
                 <div id="bottom_footer_container">
-                    <div id="copyright">2019 Copyrights Reserved to Tangled U In Tulle | Designed &amp; Developed by Jonathan Cameron at <a href="http://www.camcolordesigns.com" target="_blank">Cam Color Designs</a></div>
+                    <div id="copyright">2019 Copyrights Reserved to Tangled Up In Tulle | Designed &amp; Developed by Jonathan Cameron at <a href="http://www.camcolordesigns.com" target="_blank">Cam Color Designs</a></div>
                 </div>    
             </div>
         </footer>
