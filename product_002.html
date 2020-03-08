@@ -3,8 +3,13 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title></title>
+        <title>Shopping | White &amp; Purple Wine Glasses</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
         <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/responsive.css">
     </head>
     
     <body>
@@ -22,6 +27,21 @@
                     </ul>
                 </nav>
 
+                <div id="mobile_menu" onclick="myMenuBtn()">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+                
+                <nav id="navlist2">
+                    <ul>
+                        <li><a href="login.php">My Account</a></li>
+                        <li><a href="mycart_login.html">My Cart <img src="images/cart_icon.png"> 0 </a></li>
+                        <li><a href="login.php">LogIn</a></li>
+                        <li id="last"><a href="create_account.php">Create Account</a></li>
+                    </ul>
+                </nav>
+                
                 <div id="search_bar">
                     <input type="search" placeholder="Search" /><div id="search_container"><a href="#"><img id="search" src="images/search_icon.png" /></a></div>
                 </div>
@@ -37,9 +57,9 @@
         </header>
         
         <section id="product_section">
-            <div id="product_section_container">
-                <div id="product_view">
-                    <h2>Blue Coffee Cup</h2>
+            <div id="product_section_container" class="grid-container">
+                <div id="product_view" class="grid-item item1">
+                    <h2>White &amp; Purple Coated Wine Glass </h2>
                     
                     <div id="product_img">
                         <img id="product_large_001" src="images/product_002.jpg" /> 
@@ -47,14 +67,14 @@
                     
                     <div id="mini_product">
                         <ul id="box_pos_container">
-                            <li><div id="left_pos" class="box_pos"><img src="images/product_002.jpg" /></div></li>
-                            <li><div id="center_pos" class="box_pos"><img src="images/product_002.jpg" /></div></li>
-                            <li><div id="right_pos" class="box_pos"><img src="images/product_002.jpg" /></div></li>
+                            <li><div id="left_pos" class="box_pos grid-item item3"><img src="images/product_002.jpg" /></div></li>
+                            <li><div id="center_pos" class="box_pos grid-item item4"><img src="images/product_002.jpg" /></div></li>
+                            <li><div id="right_pos" class="box_pos grid-item item5"><img src="images/product_002.jpg" /></div></li>
                         </ul> 
                     </div>
                 </div>
                 
-                <div id="product_info">
+                <div id="product_info" class="grid-item item2">
                     <h1>$22.00</h1>
                     
                         <div id="item_description_container">
@@ -103,15 +123,13 @@
                         <li><a href="contact.html">Contact</a></li>
                         <li><a href="mycart_login.html">My Cart</a></li>
                         <li><a href="login.php">Login</a></li>
-                        <li><a href="create_account.php">Create Account</a></li>
-                    </ul>
+                     </ul>   
                 </div>
                 <div class="footer_info" id="acc">
                     <h3>Account</h3>
                     <ul>
                         <li><a href="login.php">My Account</a></li>
-                        <li><a href="login.php">Order History</a></li>
-                        <li><a href="login.php">Wish List</a></li>
+                        <li><a href="create_account.html">Create Account</a></li>
                         <li><a href="newsletter.html">Newsletter</a></li>
                     </ul>
                 </div>
@@ -129,11 +147,24 @@
             </div>
             <div id="bottom_footer">
                 <div id="bottom_footer_container">
-                    <div id="copyright">2019 Copyrights Reserved to Tangled U In Tulle | Designed &amp; Developed by Jonathan Cameron at <a href="http://www.camcolordesigns.com">Cam Color Designs</a></div>
+                    <div id="copyright">2019 Copyrights Reserved to Tangled Up In Tulle | Designed &amp; Developed by Jonathan Cameron at <a href="http://www.camcolordesigns.com" target="_blank">Cam Color Designs</a></div>
                 </div>    
             </div>
         </footer>
     </div>         
+        
+<script>
+
+function myMenuBtn() {
+    var mobileBtn = document.getElementById("navlist2");
+        if (mobileBtn.style.display === "block") {
+                mobileBtn.style.display = "none";
+        } else {
+                mobileBtn.style.display = "block";
+                }
+}   
+    
+</script>        
         
     </body>
 </html

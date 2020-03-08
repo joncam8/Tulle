@@ -3,12 +3,13 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title></title>
+        <title>About</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
         <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/responsive.css">
     </head>
     
     <body>
@@ -26,6 +27,21 @@
                     </ul>
                 </nav>
 
+                <div id="mobile_menu" onclick="myMenuBtn()">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+                
+                <nav id="navlist2">
+                    <ul>
+                        <li><a href="login.php">My Account</a></li>
+                        <li><a href="mycart_login.html">My Cart <img src="images/cart_icon.png"> 0 </a></li>
+                        <li><a href="login.php">LogIn</a></li>
+                        <li id="last"><a href="create_account.php">Create Account</a></li>
+                    </ul>
+                </nav>
+                
                 <div id="search_bar">
                     <input type="search" placeholder="Search" /><div id="search_container"><a href="#"><img id="search" src="images/search_icon.png" /></a></div>
                 </div>
@@ -40,7 +56,7 @@
             </div>
         </header>
         
-        <section id="about">
+        <section id="about" style="padding: 60px 30px;">
             <div id="about_container">
                 <h2>Get To Know Us</h2>
                 <p><strong>What We Do</strong><br/><br/>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
@@ -110,6 +126,19 @@
             </div>
         </footer>
     </div>         
+        
+<script>
+
+function myMenuBtn() {
+    var mobileBtn = document.getElementById("navlist2");
+        if (mobileBtn.style.display === "block") {
+                mobileBtn.style.display = "none";
+        } else {
+                mobileBtn.style.display = "block";
+                }
+}   
+    
+</script>            
         
     </body>
 </html

@@ -3,8 +3,13 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title></title>
+        <title>You Are Subscribed</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
         <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/responsive.css">
     </head>
     
     <body>
@@ -15,14 +20,28 @@
             <div id="top_nav">
                 <nav id="navlist1">
                     <ul>
-                        <li><a href="#">My Account</a></li>
-                        <li><a href="#">My Cart <img src="images/cart_icon.png"> 0 </a></li>
-                        <li><a href="#">Checkout</a></li>
-                        <li><a href="#">LogIn</a></li>
-                        <li><a href="#">Create Account</a></li>
+                        <li><a href="login.php">My Account</a></li>
+                        <li><a href="mycart_login.html">My Cart <img src="images/cart_icon.png"> 0 </a></li>
+                        <li><a href="login.php">LogIn</a></li>
+                        <li><a href="create_account.php">Create Account</a></li>
                     </ul>
                 </nav>
 
+                <div id="mobile_menu" onclick="myMenuBtn()">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+                
+                <nav id="navlist2">
+                    <ul>
+                        <li><a href="login.php">My Account</a></li>
+                        <li><a href="mycart_login.html">My Cart <img src="images/cart_icon.png"> 0 </a></li>
+                        <li><a href="login.php">LogIn</a></li>
+                        <li id="last"><a href="create_account.php">Create Account</a></li>
+                    </ul>
+                </nav>
+                
                 <div id="search_bar">
                     <input type="search" placeholder="Search" /><div id="search_container"><a href="#"><img id="search" src="images/search_icon.png" /></a></div>
                 </div>
@@ -33,14 +52,33 @@
             
             <div id="header_inner_container">
                 
-                <h1 class="title">YOU ARE SUBSCRIBED</h1>
+                <h1 class="title">You Are Subscribed</h1>
             </div>
         </header>
         
-        <section id="about" style="padding-bottom: 90px;">
+        <section id="about" style="padding-bottom: 90px; padding:30px;">
             <div id="about_container" style="max-width:700px;">
-                <h2 style="border-bottom: 1px solid #eee; width:300px; padding:15px; margin:0 auto 15px;">Thanks For Subscribing</h2>
-                <p>Your will receive a message in your email that will ask you to confirm your email. Once you enter your email search for Tangled Up In Tuille which will be the title. Open the message and select the verification but to confirm your email and you are all done. You will be one of the first to receive special deals and coupons to use and save a lot. Thanks again and we will be in touch.</p>
+                <h2 style="border-bottom: 1px solid #eee; width:360px; padding:15px; margin:0 auto 15px;">Thanks For Subscribing</h2>
+                
+                <div id="join_info" style="padding:20px 20px 0px;">
+                    <ul style="text-align:left;" >
+                        <li style="list-style:disc; padding-bottom: 10px;">You will receive a message in your email that will ask you to confirm your email.</li>
+                        <li style="list-style:disc; padding-bottom: 10px;">Once you enter your email search for Tangled Up In Tulle which will be the title of the message.</li>
+                        <li style="list-style:disc; padding-bottom: 10px;">Open the message and select the verification link.</li>
+                        <li style="list-style:disc;">Confirm your email and you are all done.</li>
+                    </ul>
+                </div>
+                
+                
+                <p>You will be one of the first to receive special deals and coupons to use and save a lot. Thanks again and we will be in touch.</p>
+                
+                <div id="direct">
+                    <ul style="text-align:left;">
+                        <li style="text-decoration: none; color:aquamarine;"><a href="shop.html">Start Shopping</a></li>
+                        <li><a href="myaccount.php">My Account</a></li>
+                        <li><a href="mycart.html">My Cart</a></li>       
+                    </ul>
+                </div>
                 
             </div>
         </section>
@@ -56,18 +94,17 @@
                     <ul>
                         <li><a href="about.html">About</a></li>
                         <li><a href="contact.html">Contact</a></li>
-                        <li><a href="#">My Cart</a></li>
-                        <li><a href="#">Login</a></li>
-                        <li><a href="#">Create Account</a></li>
+                        <li><a href="mycart_login.html">My Cart</a></li>
+                        <li><a href="login.php">Login</a></li>
+                        
                     </ul>
                 </div>
                 <div class="footer_info" id="acc">
                     <h3>Account</h3>
                     <ul>
-                        <li><a href="#">My Account</a></li>
-                        <li><a href="#">Order History</a></li>
-                        <li><a href="#">Wish List</a></li>
-                        <li><a href="#">Newsletter</a></li>
+                        <li><a href="login.php">My Account</a></li>
+                        <li><a href="create_account.php">Create Account</a></li>
+                        <li><a href="newsletter.html">Newsletter</a></li>
                     </ul>
                 </div>
                 <div class="footer_info" id="soc">
@@ -76,19 +113,32 @@
                     <p>FOLLOW &amp; CONNECT</p>
                     
                     <ul>
-                        <li><a href="#"><img src="images/facebook_icon.png"></a></li>
-                        <li><a href="#"><img src="images/twitter_icon.png"></a></li>
-                        <li><a href="#"><img src="images/linkedin_icon.png"></a></li>
+                        <li><a href="http://www.facebook.com" target="_blank"><img src="images/facebook_icon.png"></a></li>
+                        <li><a href="http://www.twitter.com" target="_blank"><img src="images/twitter_icon.png"></a></li>
+                        <li><a href="http://www.linkedin.com" target="_blank"><img src="images/linkedin_icon.png"></a></li>
                     </ul>
                 </div>  
             </div>
             <div id="bottom_footer">
                 <div id="bottom_footer_container">
-                    <div id="copyright">2019 Copyrights Reserved to Tangled U In Tulle | Designed &amp; Developed by Jonathan Cameron at <a href="www.camcolordesigns.com">Cam Color Designs</a></div>
+                    <div id="copyright">2019 Copyrights Reserved to Tangled Up In Tulle | Designed &amp; Developed by Jonathan Cameron at <a href="http://www.camcolordesigns.com" target="_blank">Cam Color Designs</a></div>
                 </div>    
             </div>
         </footer>
     </div>         
+        
+<script>
+
+function myMenuBtn() {
+    var mobileBtn = document.getElementById("navlist2");
+        if (mobileBtn.style.display === "block") {
+                mobileBtn.style.display = "none";
+        } else {
+                mobileBtn.style.display = "block";
+                }
+}   
+    
+</script>        
         
     </body>
 </html

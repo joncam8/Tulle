@@ -1,3 +1,6 @@
+
+
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -6,18 +9,52 @@
         <title></title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
         <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/responsive.css">
     </head>
     
     <body>
         
     <div id="wrapper">
         
+        <div id="see_cart">Show Cart <img src="images/cart_icon.png"><span class="count_cart"> 0 </span></div>
+        
+        <div id="tulle_cart">
+                    <ul id="show_cart">
+                        <li> </li>
+                    </ul>    
+                    
+                    <div>You have <span class="count_cart">X</span> items in your cart.</div>
+                    
+                    <div>Total Cart: $<span id="total_cart"></span></div>
+            
+                    <button id="clear_cart">Clear Cart</button>
+                    <button id="checkout">Checkout</button>
+                    
+                    <div id="hide_cart">Hide Cart</div>
+                </div>
+        
         <header id="header">
             <div id="top_nav">
                 <nav id="navlist1">
+                    <ul>
+                        <li><a href="login.php">My Account</a></li>
+                        <li><a href="mycart_login.html">My Cart <img src="images/cart_icon.png"><span class="count_cart"> 0 </span> </a></li>
+                        <li><a href="login.php">LogIn</a></li>
+                        <li><a href="create_account.php">Create Account</a></li>
+                    </ul>
+                </nav>
+
+                <div id="mobile_menu" onclick="myMenuBtn()">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+                
+                <nav id="navlist2">
                     <ul>
                         <li><a href="login.php">My Account</a></li>
                         <li><a href="mycart_login.html">My Cart <img src="images/cart_icon.png"> 0 </a></li>
@@ -25,7 +62,7 @@
                         <li><a href="create_account.php">Create Account</a></li>
                     </ul>
                 </nav>
-
+                
                 <div id="search_bar">
                     <input type="search" placeholder="Search" /><div id="search_container"><a href="#"><img id="search" src="images/search_icon.png" /></a></div>
                 </div>
@@ -44,72 +81,42 @@
             <div id="featured_products2_container">
                 <h2>Get Your Merch</h2>
                 
-                <div id="intro_products2">
-                    <ul>
-                        <li class="prod">
-                            <a href="product_001.html">
-                                
-                                <div class="product_box" id="product_001_img" onmouseover="on()">
-                                    <img src="images/product_001.png" />
-                                    
-                                    <div class="title_price">
-                                        <span id="product_title_01" class="product_title">Coffee Cup</span><br/>
-                                        <span id="product_price_01" class="product_price">$15.00</span>
-                                    </div>    
-                                </div>
-                            </a>
-                            
-                            <button type="button" class="add_to_cart_btn" id="atc_btn_01"><a href="mycart_login.html">ADD TO CART</a></button>
-                        </li>
-                        <li class="prod">
-                            <a href="product_002.html">
-                                <div class="product_box" id="product_002">
-                                    <img src="images/product_002.jpg" />
-                                    
-                                    <div class="title_price">
-                                        <span id="product_title_02" class="product_title">Wine Clip</span><br/>
-                                        <span id="product_price_02" class="product_price">$22.00</span>
-                                    </div>
-                                </div>
-                            </a>
-                            
-                            <button type="button" class="add_to_cart_btn" id="atc_btn_02"><a href="mycart_login.html">ADD TO CART</a></button>
-                        </li>
-                        <li class="prod">
-                            <a href="product_003.html">
-                                <div class="product_box" id="product_003">
-                                    <img src="images/product_003.jpg" />
-                                    
-                                    <div class="title_price">
-                                        <span id="product_title_03" class="product_title">Badge Clip</span><br/>
-                                        <span id="product_price_03" class="product_price">$7.00</span>
-                                    </div>
-                                </div>
-                            </a>
-                            
-                            <button type="button" class="add_to_cart_btn" id="atc_btn_03"><a href="mycart_login.html">ADD TO CART</a></button>
-                        </li>
-                        <li class="prod">
-                            <a href="product_004.html">
-                                
-                                <div class="product_box" id="product_004">
-                                    <img src="images/product_004.jpg" />
-                                    
-                                    <div class="title_price">
-                                        <span id="product_title_04" class="product_title">Wine Glass</span><br/>
-                                        <span id="product_price_04" class="product_price">$22.00</span>
-                                    </div>
-                                </div>
-                            </a>
-                            
-                            <button type="button" class="add_to_cart_btn" id="atc_btn_04"><a href="mycart_login.html">ADD TO CART</a></button>
-                        </li>
-                    </ul>
-                </div>
+                
                 
                 <div id="intro_products2">
                     <ul>
                         <li class="prod">
+                            <a href="product_001.html">
+                                
+                                <div class="product_box" id="product_001_img">
+                                    <img src="images/product_001.png" />
+                                    
+                                    <div class="title_price">
+                                        <span id="product_title_01" class="product_title">Coffee Cup</span><br/>
+                                        <span id="product_price_01" class="product_price">$15.00</span>
+                                    </div>    
+                                </div>
+                            </a>
+                            
+                            <button type="button" class="add_to_cart_btn" data-name="Coffee Cup" data-price="15.00" id="atc_btn_01"><a href="#">ADD TO CART</a></button>
+                        </li>
+                        
+                        <li class="prod">
+                            <a href="product_002.html">
+                                <div class="product_box" id="product_002">
+                                    <img src="images/product_002.jpg" />
+                                    
+                                    <div class="title_price">
+                                        <span id="product_title_02" class="product_title">Blue Wine Glass</span><br/>
+                                        <span id="product_price_02" class="product_price">$22.00</span>
+                                    </div>
+                                </div>
+                            </a>
+                            
+                            <button type="button" class="add_to_cart_btn" data-name="Blue Wine Glass" data-price="22.00" id="atc_btn_02"><a href="mycart_login.html">ADD TO CART</a></button>
+                        </li>
+                        
+                        <li class="prod">
                             <a href="product_003.html">
                                 <div class="product_box" id="product_003">
                                     <img src="images/product_003.jpg" />
@@ -121,8 +128,9 @@
                                 </div>
                             </a>
                             
-                            <button type="button" class="add_to_cart_btn" id="atc_btn_03"><a href="mycart_login.html">ADD TO CART</a></button>
+                            <button type="button" class="add_to_cart_btn" data-name="Badge Clip" data-price="7.00" id="atc_btn_03"><a href="mycart_login.html">ADD TO CART</a></button>
                         </li>
+                        
                         <li class="prod">
                             <a href="product_004.html">
                                 
@@ -136,38 +144,8 @@
                                 </div>
                             </a>
                             
-                            <button type="button" class="add_to_cart_btn" id="atc_btn_04"><a href="mycart_login.html">ADD TO CART</a></button>
+                            <button type="button" class="add_to_cart_btn" data-name="White Wine Glass" data-price="22.00" id="atc_btn_04"><a href="mycart_login.html">ADD TO CART</a></button>
                         </li>
-                        <li class="prod">
-                            <a href="product_002.html">
-                                <div class="product_box" id="product_002">
-                                    <img src="images/product_002.jpg" />
-                                    
-                                    <div class="title_price">
-                                        <span id="product_title_02" class="product_title">Wine Glass</span><br/>
-                                        <span id="product_price_02" class="product_price">$22.00</span>
-                                    </div>
-                                </div>
-                            </a>
-                            
-                            <button type="button" class="add_to_cart_btn" id="atc_btn_02"><a href="mycart_login.html">ADD TO CART</a></button>
-                        </li>
-                        <li class="prod">
-                            <a href="product_001.html">
-                                
-                                <div class="product_box" id="product_001_img" onmouseover="on()">
-                                    <img src="images/product_001.png" />
-                                    
-                                    <div class="title_price">
-                                        <span id="product_title_01" class="product_title">Coffee Cup</span><br/>
-                                        <span id="product_price_01" class="product_price">$15.00</span>
-                                    </div>    
-                                </div>
-                            </a>
-                            
-                            <button type="button" class="add_to_cart_btn" id="atc_btn_01"><a href="mycart_login.html">ADD TO CART</a></button>
-                        </li>
-                        
                         
                         
                     </ul>
@@ -248,6 +226,200 @@
             </div>
         </footer>
     </div>         
+ 
+<script>
+    
+function myMenuBtn() {
+    var mobileBtn = document.getElementById("navlist2");
+        if (mobileBtn.style.display === "block") {
+                mobileBtn.style.display = "none";
+        } else {
+                mobileBtn.style.display = "block";
+                }
+} 
+    
+ $("#see_cart").click(function() {
+     $("#tulle_cart").fadeToggle();
+ });  
+    
+ $("#hide_cart").click(function() {
+     $("#tulle_cart").fadeToggle();
+ });     
+    
+/***************************************
+jquery functions */
+    
+    $(".add_to_cart_btn").click(function(event) {
+        event.preventDefault();
+        var name = $(this).attr("data-name");
+        var price = $(this).attr("data-price");
+        
+        tulle_shoppingCart.addItemToCart(name, price, 1);
+        displayCart();
+    });
+     
+    $("#clear_cart").click(function(event) {
+        tulle_shoppingCart.clearCart();
+        displayCart();
+    });
+    
+    function displayCart() {
+        
+        var cartArray = tulle_shoppingCart.listCart();
+        var output = "";
+        
+        for (var i in cartArray) {
+            output += "<li>"
+                +cartArray[i].count
+                +"   "+cartArray[i].name
+                +" x "+cartArray[i].price
+                +" = "+cartArray[i].total
+                +" <button class='add_item' data-name='"
+                +cartArray[i].name+"'>+</button>"
+                +" <button class='subtract_item' data-name='"
+                +cartArray[i].name+"'>-</button>"
+                +" <button class='delete_item' data-name='"
+                +cartArray[i].name+"'>x</button>"
+                +"</li>";
+        }
+        $("#show_cart").html(output);
+        $(".count_cart").html(tulle_shoppingCart.countCart());
+        $("#total_cart").html(tulle_shoppingCart.totalCart());
+    }
+   
+    $("#show_cart").on("click", ".delete_item", function(event){
+        var name = $(this).attr("data-name");
+        tulle_shoppingCart.removeItemFromCartAll(name);
+        displayCart();
+    });
+    
+    $("#show_cart").on("click", ".subtract_item", function(event){
+        var name = $(this).attr("data-name");
+        tulle_shoppingCart.removeItemFromCart(name);
+        displayCart();
+    });
+    
+    $("#show_cart").on("click", ".add_item", function(event){
+        var name = $(this).attr("data-name");
+        tulle_shoppingCart.addItemToCart(name, 0, 1);
+        displayCart();
+    });
+    
+    $("#show_cart").on("change", ".item_count", function(event){
+        var name = $(this).attr("data-name");
+        var count = $(this).val();
+        tulle_shoppingCart.setCountForItem(name, count);
+    });
+    
+    // *********************************************
+    // Shopping Cart functions
+    
+    var tulle_shoppingCart = {};
+    tulle_shoppingCart.cart = [];
+    tulle_shoppingCart.Item = function(name, price, count) {
+        this.name = name
+        this.price = price
+        this.count = count
+    };
+    
+    tulle_shoppingCart.addItemToCart = function(name, price, count) {
+        for (var i in this.cart) {
+            if (this.cart[i].name === name) {
+                this.cart[i].count += count;
+                this.saveCart();
+                return;
+            }
+        }
+        
+        var item = new this.Item(name, price, count);
+        this.cart.push(item);
+        this.saveCart();
+    }
+    
+    tulle_shoppingCart.setCountForItem = function(name, count){
+        for (var i in this.cart) {
+            if (this.cart[i].name === name) {
+                this.cart[i].count = count;
+                break;
+                }
+        }
+        this.saveCart();
+    }
+    
+    tulle_shoppingCart.removeItemFromCart = function(name) { // Removes one item
+        for (var i in this.cart) {
+            if (this.cart[i].name === name) {
+                this.cart[i].count --; 
+                if (this.cart[i].count === 0) {
+                    this.cart.splice(i, 1);   
+                }
+                break;
+            }
+        }
+        this.saveCart();
+    } 
+    
+    tulle_shoppingCart.removeItemFromCartAll = function(name) { // removes all item name
+        for (var i in this.cart) {
+            if (this.cart[i].name === name) {
+                this.cart.splice(i, 1);
+                break;
+            }
+            
+        }
+        tulle_shoppingCart.saveCart();
+    }
+    
+    tulle_shoppingCart.clearCart = function() {
+        this.cart = [];
+        this.saveCart();
+    }
+    
+    tulle_shoppingCart.countCart = function() { // -> return total count
+        var totalCount = 0;
+        for (var i in this.cart) {
+            totalCount += this.cart[i].count;
+        }
+        
+        return totalCount;                   
+    }
+    
+    tulle_shoppingCart.totalCart = function() { // -> return total cost
+        var cartTotal = 0;
+        for (var i in this.cart) {
+            cartTotal += this.cart[i].price * this.cart[i].count;
+        }
+        
+        return cartTotal.toFixed(2);
+    }
+    
+    tulle_shoppingCart.listCart = function() { // -> array of Item
+        var cartCopy = [];
+        for (var i in this.cart) {
+            var item = this.cart[i];
+            var itemCopy = {};
+            for (var p in item) {
+                itemCopy[p] = item[p];
+            }
+            itemCopy.total = (item.price * item.count).toFixed(2);
+            cartCopy.push(itemCopy);
+        }
+        return cartCopy;
+    }
+    
+    tulle_shoppingCart.saveCart = function() {
+        localStorage.setItem("shoppingCart", JSON.stringify(this.cart));
+    }
+    
+    tulle_shoppingCart.loadCart = function() {
+        this.cart = JSON.parse(localStorage.getItem("shoppingCart"));
+    }
+    
+    tulle_shoppingCart.loadCart();
+    displayCart();
+
+    
+</script>         
         
     </body>
 </html

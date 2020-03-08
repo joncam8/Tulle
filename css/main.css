@@ -36,16 +36,22 @@ li {
 #top_nav {
     width:100%;
     background-color:rgba(135, 220, 189, .90);
-    padding-top: 15px;
     border-bottom: 5px solid rgba(89,11,133,.75);
     font-family: CATIA Symbols;
     font-weight: bold;
+    padding-bottom:24px;
 }
 
 #top_nav:after {
     display: block;
     content:"";
     clear:both;
+}
+
+#navlist1 ul {
+    margin-top: -2px;
+    margin-bottom: -6px;
+    padding-top: 20px;
 }
 
 #navlist1 ul li {
@@ -56,7 +62,7 @@ li {
     color:#fff;
     text-decoration: none;
     list-style: none;
-    padding:15px 20px;
+    padding:20px 20px;
 }
 
 #navlist1 li a:visited {
@@ -68,23 +74,30 @@ li {
     background-color:rgba(0,0,0,.90);
 }
 
+#navlist2 {
+    display: none;
+}
+
 #search_bar {
     float:right;
     margin-right:20px;
-    margin-top: -25px;
+    margin-top: -23px;
     margin-bottom:10px;
+    display: none;
 }
 
 #search_bar input {
-    width:300px;
-    padding:5px 10px;
-    border:none;
+    width: 300px;
+    padding: 5px 10px;
+    border: none;
     border-radius: 20px;
     margin-right: 30px;
+    margin-top: 0px;
+    margin-bottom: 3px;
 }
 
 #logo {
-    margin:40px;  
+    margin:40px; 
 }
 
 #search {
@@ -96,17 +109,18 @@ li {
 }
 
 #header_inner_container {
-    max-width: 800px;
+    max-width: 825px;
     margin:0px 0px 40px; 
 }
 
 #header_inner_container h1 {
     color:#fff;
-    margin-left: 40px;
+    margin: 83px 40px;
     font-size:46px;
     font-weight: bold;
     font-family: Segoe UI;
     text-shadow: 0px 0px 10px #888;
+    
 }
 
 .page_logo {
@@ -117,23 +131,27 @@ li {
     margin-top:80px;
 }
 
-#shop_btn {
+.shop_btn {
     border:none;
     text-align: center;
     font-family: CATIA Symbols;
     font-weight: bold;
-    margin: 30px 40px 0px;
-    box-shadow: 0px 0px 20px #528572;
+    margin:40px;
+    box-shadow: 0px 0px 25px #528572;
     font-size: 18px;
     background-color:rgba(135, 220, 189, .90);
     opacity: .9;
+    padding:10px 0px;
+    width:138px;
+}
+
+#shop_btn {
 }
 
 #shop_btn a:link {
-    background-color:rgba(135, 220, 189, 1);
     color:#fff;
     text-decoration: none;
-    padding:10px 40px;
+    padding:14px 25px;
     
 }
 
@@ -165,15 +183,15 @@ li {
 #featured_products_container {
     max-width: 1000px;
     margin:auto;
-    padding:60px 0px 80px;
+    padding:40px;
 }
 
 #featured_products_container h2 {
     font-family: Ebrima;
     color:#2c2c2c;
-    border-bottom:1px solid rgba(255,255,255,1);
+    border-bottom:1px solid rgba(0,0,0,.10);
     margin-bottom: 50px;
-    padding:0px 0px 5px;
+    padding:0px 0px 30px;
 }
 
 #intro_produts {
@@ -184,7 +202,7 @@ li {
 #intro_products ul li {
     display: inline;
     float:left;
-    margin-right: 37px;
+    margin-right: 13px;
     margin-bottom: 37px; 
 }
 
@@ -198,6 +216,191 @@ li {
 
 
 #intro_products a {
+    text-decoration: none;
+}
+.product_box:hover {
+    opacity: .4;
+    transition: .3s ease;
+}
+
+.product_box {
+    max-width:200px;
+    
+}
+
+.product_box img {
+    max-width:200px;
+    margin:0;
+    padding:0;
+}
+
+.prod {
+    padding:10px 10px 25px;
+    background-color:#fff;
+    box-shadow: 0px 0px 3px #ccc;
+}
+
+.title_price {
+    width:100%;
+    text-align: center;
+    padding:20px 0px;
+    margin-top: -10px;
+    border-bottom:1px solid #f4f4f4;
+    margin-bottom: 5px;
+}
+
+.title_price p {
+    font-size: 12px;
+    color:#333;
+    padding:15px 0 0;
+}
+
+.product_title, .product_price {
+    color:#333;
+    font-family: Ebrima;
+}
+
+.product_price {
+    font-weight: bold;
+    display: block;
+    margin-top:15px;
+}
+
+.add_to_cart_btn {
+    text-align: center;
+    border:none;
+    margin-top:20px;
+    width:180px;
+    width:100%;
+    background:none;
+    
+}
+
+.buy_btn {
+    text-align: center;
+    border:none;
+    margin-top:30px;
+    width:180px;
+    width:100%;
+    background:none;
+}
+
+.add_to_cart_btn a:link, .buy_btn a:link {
+    background-color:rgba(135, 220, 189, .90);
+    color:#fff;
+    text-decoration: none;
+    padding:10px 20px;
+}
+
+.add_to_cart_btn a:visited, .buy_btn a:visited {
+    color:#fff;
+    text-decoration: none;
+}
+
+.add_to_cart_btn a:hover, .buy_btn a:hover {
+    background-color:rgba(0,0,0,.90);
+    transition: .3s ease;
+    opacity: .9;
+}
+
+
+
+#shop_btn_02 {
+    margin-top: 20px;
+    border: none;
+    background-color:rgba(135, 220, 189, .90);
+    padding:15px 0px;
+}
+
+#shop_btn_02 a:link {
+    padding:18px 20px;
+    color:#fff;
+    text-decoration: none;
+    
+}
+
+#shop_btn_02 a:visited {
+    color:#fff;
+    text-decoration: none;
+}
+
+#shop_btn_02 a:hover {
+    -webkit-transition: .5s ease;
+    transition: .5s ease;
+    opacity: .9;
+    background-color:rgba(0,0,0,.90);
+}
+
+#next {
+    margin:0;
+    padding:0;
+    font-size: 16px;
+    border-radius: 100%;
+    border:1px solid #fff;
+    padding:0px 6px 3px;
+    text-align:center;
+    margin-left: 5px;
+}
+
+#shop_btn_container {
+    display: block;
+    clear:both;
+}
+
+/********** END PRODUCT SECTION **********/
+
+/********** PRODUCT SECTION 2 **********/
+
+#featured_products2 {
+    padding: 30px;
+}
+
+
+#featured_products2:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+#featured_products2_container {
+    max-width: 940px;
+    margin:auto;
+    padding:60px 0px 80px;
+}
+
+#featured_products2_container h2 {
+    font-family: Ebrima;
+    color:#2c2c2c;
+    border-bottom:1px solid rgba(0,0,0,.10);
+    margin-bottom: 50px;
+    padding:0px 0px 5px;
+}
+
+#intro_produts2 {
+    width:100%;
+    
+}
+
+#intro_products2 ul li {
+    display: inline;
+    float:left;
+    margin-right: 20px;
+    margin-bottom: 20px; 
+}
+
+#intro_products2 ul li:first-child {
+    margin-left: 0px;
+}
+
+#intro_products2 ul li:nth-child(4) {
+    margin-right:0;
+}
+
+#intro_products2 ul li:nth-child(8) {
+    margin-right:0px;
+}    
+
+#intro_products2 a {
     text-decoration: none;
 }
 .product_box:hover {
@@ -287,25 +490,27 @@ li {
 
 
 
-#shop_btn_02 {
+#shop_btn_03 {
+    display: none;
     margin-top: 20px;
     border: none;
-    background:none;
-}
-
-#shop_btn_02 a:link {
     background-color:rgba(135, 220, 189, .90);
-    color:#fff;
-    text-decoration: none;
-    padding:15px 20px;
+    padding:15px 0px;
 }
 
-#shop_btn_02 a:visited {
+#shop_btn_03 a:link {
+    padding:18px 20px;
+    color:#fff;
+    text-decoration: none;
+    
+}
+
+#shop_btn_03 a:visited {
     color:#fff;
     text-decoration: none;
 }
 
-#shop_btn_02 a:hover {
+#shop_btn_03 a:hover {
     -webkit-transition: .5s ease;
     transition: .5s ease;
     opacity: .9;
@@ -328,7 +533,8 @@ li {
     clear:both;
 }
 
-/********** END PRODUCT SECTION **********/
+/********** END PRODUCT SECTION 2 **********/
+
 
 /********** DELIVERY, MONEY BACK & 24/7 SUPPORT SECTION **********/
 
@@ -344,14 +550,13 @@ li {
 .del_mon_sup_box {
     float:left;
     text-align: center;
-    width:32.62%;
+    width:33.33%;
     padding:60px 0px;
     color:#fff;
-    margin:8px 8px 8px 0px;
 }
  
 .del_mon_sup_box:nth-child(1) {
-    margin-left:8px;
+    margin-left:0px;
 }
 
 
@@ -378,7 +583,8 @@ li {
 }
 
 .del_mon_sup_box p {
-    padding:0px 90px;;
+    padding:0px 30px;
+    margin-bottom: 0;
 }
 
 /********** END DELIVERY MONEY BACK & 24/7 SUPPORT SECTION **********/
@@ -386,10 +592,11 @@ li {
 /********** NEWSLETTER SECTION **********/
 
 #join {
-    padding:80px 0px 100px;
+    padding:80px 0px;
     clear:both;
     background-image:url(../images/newsletter_bg.jpg);
-    margin:0px 8px 8px;
+    margin:0;
+    box-shadow: inset 0px 0px 150px #444;
 }
 
 #join_container {
@@ -404,49 +611,42 @@ li {
     margin-bottom: 5px;
     font-size: 40px;
     font-weight: bold;
+    padding:0 40px;
 }
 
 #join_container p {
-    margin-bottom: 40px;
-    padding:0px 60px;
+    margin: 20px;
+    padding: 0px 20px;
+}
+
+#join_container form {
+    max-width: 400px;
+    margin: auto;
+    padding:20px;
 }
 
 #join_container input {
-    width:400px;
+    max-width:400px;
+    width:100%;
     background-color:#eaeaea;
     padding:15px;
     text-align: center;
-    margin:0 140px;
+    margin:0;
     border: none;;
-    font-weight: bold;
-    color:rgba(135, 220, 189, .90);
+    font-weight: 100;
+    color:rgba(0, 0, 0, .90);
     font-size: 20px;
 }
 
 #join_container button {
-    padding:10px 0px;
+    padding:10px 15px;
     background-color:rgba(135, 220, 189, .90);
     color:#fff;
     border:none;
-    margin-top: 10px;
+    margin-top: 20px;
 }
 
-
-
-#join_container button a:link {
-    background-color:rgba(135, 220, 189, .90);
-    color:#fff;
-    text-decoration: none;
-    padding:10px 40px;
-    
-}
-
-#join_container button a:visited {
-    color:#fff;
-    text-decoration: none;
-}
-
-#join_container button a:hover {
+#join_container button:hover {
     transition: 1s ease;
     opacity: .9;
     background-color:rgba(0,0,0,.90);
@@ -472,12 +672,13 @@ li {
     max-width:1028px;
     margin:0 auto 80px;
     color:#fff;
-    padding-bottom: 180px;
 }
 
 .footer_info {
     float:left;
-    width:33.33%;  
+    width:33.33%; 
+    padding-right: 40px;
+    padding-left:40px
 }
 
 .footer_container ul li {
@@ -515,6 +716,7 @@ li {
 }
 
 #copyright {
+    padding:0 40px;
     font-size: 11px;
     color:#fff;
 }
@@ -608,7 +810,7 @@ li {
 }
 
 #contact textarea {
-    width: 590px;
+    width: 560px;
     height:200px;
     padding:15px;
     margin-bottom: 15px;
@@ -654,6 +856,10 @@ li {
     width:300px;
 }
 
+#about h2 {
+    width:100%;
+}
+
 #about p {
     padding:40px; 
     max-width: 700px; 
@@ -683,13 +889,40 @@ li {
     box-shadow: 0px 0px 0px #fff;
 }
 
+#shop_btn_04 {
+    margin:0;
+    margin-top: 20px;
+    border: none;
+    background-color:rgba(135, 220, 189, .90);
+    padding:15px 0px;
+}
+
+#shop_btn_04 a:link {
+    padding:15px 20px;
+    color:#fff;
+    text-decoration: none;
+    
+}
+
+#shop_btn_04 a:visited {
+    color:#fff;
+    text-decoration: none;
+}
+
+#shop_btn_04 a:hover {
+    -webkit-transition: .5s ease;
+    transition: .5s ease;
+    opacity: .9;
+    background-color:rgba(0,0,0,.90);
+}
+
+
 /********** END ABOUT SECTION **********/
 
 /********** PRODUCT_001, PRODUCT_002 SECTION **********/
 
 #product_section {
     background-color:#eaeaea;
-    padding-bottom: 60px;
 }
 
 #product_section:after {
@@ -700,8 +933,8 @@ li {
 
 #product_section_container {
     max-width: 1028px;
-    margin:auto;
-    padding-bottom: 40px;
+    margin:30px auto;
+    padding-bottom: 30px;
 }
 
 #product_section_container:after {
@@ -712,16 +945,17 @@ li {
 
 #product_view {
     float:left;
-    margin-top: -140px; 
+    margin:30px; 
+    max-width: 500px;
 }
 
 #product_view h2 {
-    color:#fff;
-    margin-bottom: 10px;
+    color: #4a4a4a;
+    margin-bottom: 30px;
 }
 
 #product_img {
-    width:400px;
+    max-width:400px;
     padding:40px;
     background-color:#fff;
     box-shadow: 0px 0px 6px #ddd;
@@ -729,44 +963,90 @@ li {
 
 #product_img #product_large_001 {
     width:100%;
+    max-width:318px;
 }
 
 #mini_product {
-    width:400px;
+    max-width:400px;
+    width:100%;
     margin-top: 10px;
 }
 
 .box_pos {
     float:left;
     padding:10px;
-    margin-right: 10px;
+    margin-right: 15px;
+    
     box-shadow: 0px 0px 6px #ddd;
     background-color:#fff;
 }
 
+.grid-container {
+    display: grid;
+}
+
+.item1 {
+    grid-column: 1 /span 1;
+    grid-row: 1;
+}
+
+.item2 {
+    grid-column: 2 /span 1;
+    grid-row: 1;
+}
+
+.item3 {
+    grid-column: 1 /span 1;
+    grid-row: 2;
+}
+
+.item4 {
+    grid-column: 2 /span 1;
+    grid-row: 2;
+}
+
+.item5 {
+    grid-column: 3 /span 1;
+    grid-row: 2;
+}
+
+#right_pos{
+    margin:0;
+}
+
 .box_pos img {
-    width:80px;
+    max-width:55px;
+    width:100%;
     
 }
 
+.intro_product2 {
+    padding:20px;
+}
+
 #product_info {
-    width:500px;
+    max-width:500px;
     float:right;
-    margin-top: -120px;
+    margin:30px;
 }
 
 #product_info h1 {
     font-size: 70px;
-    color:#fff;
-    margin-bottom: 120px;
+    color:#4e4e4e;
+    margin:50px 0 20px;
 }
 
-#item_description_container {
-    margin-top:70px;
+#item_title, #color_pick_title, #quantity_container h3 {
+    font-size: 24px;
 }
 
 #product_info p {
     padding:5px 0px;
+    font-size: 14px;
+}
+
+#add_buy_btn {
+    
 }
 
 #color_pick_container {
@@ -785,9 +1065,8 @@ li {
 #quantity_container {
     clear: both;
     margin-top:50px;
-    margin-bottom: 40px;
+    margin-bottom: 53px;
 }
-
 
 .color {
     width:30px;
@@ -831,16 +1110,14 @@ li {
 
 .count_btn {
     background-color:aquamarine;
-    padding:3px 7px 5px;
-    width:20px;
+    padding:7px 20px 10px;
     text-align: center;
     font-weight: bold;
     border: 1px solid #eee;
 }
 
 #count {
-    width:20px;
-    padding:3px 7px 3px;
+    padding:7px 20px 10px;
     text-align: center;
     background-color:#fff;
     border: 1px solid #eee;
@@ -882,6 +1159,7 @@ li {
 #login_container {
     max-width: 1028px;
     margin:auto;
+    padding:20px;
 }
 
 #login h2 {
@@ -905,20 +1183,21 @@ li {
 }
 
 #login input {
-    padding:15px 10px;
-    float:left;
-    margin:auto;
+    padding: 15px;
+    float: left;
+    margin: auto;
     margin-bottom: 20px;
-    width:280px;
+    max-width: 260px;
+    width: 50%;
     margin-right: 10px;
     margin-left: 10px;
-    background-color:#eaeaea;
-    color:#2c2c2c;
+    background-color: #eaeaea;
+    color: #2c2c2c;
     border: none;
 }
 
 #login #form_input {
-    width: 658px;
+    max-width: 658px;
     margin: auto;
     
 }
@@ -926,11 +1205,11 @@ li {
 #login button {
     padding:10px 15px;
     margin-left:10px;
-    border:none;
     background-color:rgba(135, 220, 189, .98);
-    color:#fff; 
-    cursor: pointer;
+    border:none;
+    color:#fff;
 }
+
 
 #login button:hover {
     transition: 1s ease;
@@ -943,7 +1222,7 @@ li {
 /********** MYCART LOGIN SECTION **********/
 
 #mycart_login {
-    padding:80px 0px 100px;
+    padding:80px 20px 100px;
     max-width: 1000px; 
     margin: auto;
 }
@@ -951,11 +1230,10 @@ li {
 #mycart_login_container {
     max-width: 750px;
     margin:auto;
-    padding-bottom: 320px;
+    padding-bottom: 340px;
 }
 
 #mycart_login h2 {
-    margin-bottom: 20px;
 }
 
 #mycart_login p {
@@ -964,7 +1242,7 @@ li {
 }
 
 #mycart_login form {
-    max-width: 320px;
+    max-width: 370px;
     padding:40px;
     background-color:#fff; 
     border:1px solid #ddd; 
@@ -986,7 +1264,6 @@ li {
 }
 
 #mycart_login #form_input {
-    width: 658px;
     margin: auto;
     
 }
@@ -1009,7 +1286,7 @@ li {
 #mycart_login_container2 {
     float:left; 
     margin-left:460px;  
-    margin-top: -180px; 
+    margin-top: -200px; 
     
 }
 
@@ -1036,7 +1313,7 @@ li {
 /********** CREATE ACCOUNT SECTION **********/
 
 #create_account {
-    padding:40px 0px 50px;
+    padding:40px 20px 50px;
 }
 
 #create_account_container {
@@ -1055,7 +1332,7 @@ li {
 }
 
 #create_account form {
-    max-width: 640px;
+    max-width: 660px;
     margin: auto;
     background-color:#fff; 
     border:1px solid #ddd; 
@@ -1069,7 +1346,8 @@ li {
     float:left;
     margin:auto;
     margin-bottom: 20px;
-    width:280px;
+    max-width:279px;
+    width:50%;
     margin-right: 10px;
     margin-left: 10px;
     background-color:#eaeaea;
@@ -1079,7 +1357,7 @@ li {
 }
 
 #create_account #form_input {
-    width: 658px;
+    max-width: 658px;
     margin: auto;
     
 }
@@ -1087,7 +1365,7 @@ li {
 #create_account button {
     text-align: center;
     padding:10px 15px;
-    margin-left:12px;
+    margin-left:10px;
     border:none;
     background-color:rgba(135, 220, 189, .98);
     color:#fff;
@@ -1124,20 +1402,21 @@ li {
 
 #newsletter_container p {
     margin-bottom: 40px;
-    padding:0px 60px;
+    margin-top:20px;
     color:#444; 
 }
 
 #newsletter_container input {
-    width:400px;
-    background-color:#fff;
-    height:30px;
-    padding:10px;
+    max-width: 400px;
+    width: 100%;
+    background-color: #fff;
+    height: 30px;
+    padding: 30px;
     text-align: center;
-    margin:0 140px;
+    margin: 0 auto;
     border: none;
     font-weight: bold;
-    color:rgba(135, 220, 189, .90);
+    color: rgba(31, 31, 31, 1);
     font-size: 20px;
 }
 
@@ -1146,20 +1425,20 @@ li {
 }
 
 #newsletter_container button {
-    padding:10px 0px;
-    background-color:rgba(135, 220, 189, .90);
-    color:#fff;
-    border:none;
-    margin-top: 10px;
+    padding: 10px 0px;
+    background-color: rgba(135, 220, 189, .90);
+    color: #fff;
+    border: none;
+    clear: both;
+    display: block;
+    margin: 20px auto;
 }
 
 
-
 #newsletter_container button a:link {
-    background-color:rgba(135, 220, 189, .90);
     color:#fff;
     text-decoration: none;
-    padding:10px 40px;
+    padding:10px 15px;
     
 }
 
@@ -1169,26 +1448,260 @@ li {
 }
 
 #newsletter_container button a:hover {
-    background-color:rgba(0,0,0,.90);
+    transition: 1s ease;
     opacity: .9;
+    background-color:rgba(0,0,0,.90);
 }
 
 /********** END NEWSLETTER PAGE SECTION **********/
 
 /********** FORM EXTRAS SECTION **********/
 
-.uname:link, .pass:link, .cacc:link .login:link {
-    color:rgba(135, 220, 189, 1);  
+.uname:link, .pass:link, .cacco:link, .login:link {
+    color:rgba(100, 180, 160, 1);  
     text-decoration: none;
 }
 
-.uname:visited, .pass:visited, .cacc:visited .login:visited {
-    color:rgba(135, 220, 189, 1);  
+.uname:visited, .pass:visited, .cacco:visited, .login:visited {
+    color:rgba(100, 180, 160, 1);  
     text-decoration: none;
 }
 
-.uname:hover, .pass:hover, .cacc:hover .login:hover {
-    color:rgba(0,0,0,.4);
+.uname:hover, .pass:hover, .cacco:hover, .login:hover {
+    color:rgba(100, 180, 160, .4);
     opacity: .9;
+    text-decoration: none;
 }
 /********** END FORM EXTRAS SECTION **********/
+
+/********** MY ACCOUNT PAGE **********/
+
+#menu_btn {
+    width:500px;
+    margin:auto;
+}
+
+#menu_btn ul li {
+    display: inline;
+    margin:30px;
+    color:#2c2c2c;
+    text-decoration: none;
+}
+
+#menu_btn ul li:a link {
+    text-decoration: none;
+    color:#2c2c2c;
+}
+
+#menu_btn ul li:a visited {
+    text-decoration: none;
+    color:#2c2c2c;
+}
+
+#menu_btn ul li:a hover {
+    text-decoration: none;
+}
+
+#myaccount {
+    padding:80px 0px 100px;
+}
+
+#myaccount_container {
+    max-width: 1028px;
+    margin:auto;
+    text-align: center
+}
+
+#myaccount h2 {
+    border-bottom: 1px solid #eee; 
+    padding-bottom: 15px; 
+    margin:auto;
+    margin-bottom: 20px; 
+    width:370px;
+}
+
+#myaccount p {
+    padding:40px; 
+    max-width: 700px; 
+    margin:20px auto; 
+    text-align: left; 
+    background-color: #fcfcfc;
+    box-shadow: 0px 0px 6px #ddd;
+}
+
+/********** END MY ACCOUNT PAGE **********/
+
+/********** FORGET PASSWORD PAGE **********/
+
+#forgotpass {
+    padding:80px 0px 100px;
+}
+
+#forgotpass_container {
+    max-width: 1028px;
+    margin:auto;
+}
+
+#forgotpass h2 {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+
+#forgotpass p {
+    margin:10px 0px;
+    clear:both;
+}
+
+#forgotpass form {
+    max-width: 550px;
+    margin: auto;
+    padding:30px 40px 40px 40px;
+    border: none;
+    box-shadow: 0px 0px 6px #ddd;
+    background-color:#fff;
+    margin-top:20px; 
+}
+
+#forgotpass input {
+    padding: 10px;
+    margin-bottom: 20px;
+    max-width: 470px;
+    width: 100%;
+    background-color: #eaeaea;
+    color: #2c2c2c;
+    border: none;
+}
+
+#forgotpass #form_input {
+    max-width: 658px;
+    margin: auto;
+    width:100%;
+    
+}
+
+#forgotpass button {
+    padding: 10px 15px;
+    display: block;
+    max-width: 100px;
+    width: 100%;
+    background-color: rgba(135, 220, 189, .98);
+    border: none;
+    color: #fff;
+}
+
+#forgotpass button:hover {
+    transition: 1s ease;
+    opacity: .9;
+    background-color:rgba(0,0,0,.90);
+}
+
+/********** END FORGET PASSWORD PAGE **********/
+
+/********** EMAIL SUCCESS PAGE **********/
+
+#e_success {
+    padding:80px 0px 80px;
+}
+
+#e_success_container {
+    max-width: 1028px;
+    margin:auto;
+    text-align: center
+}
+
+#e_success h1 {
+    border-bottom: 1px solid #eee; 
+    padding-bottom: 15px; 
+    margin:auto; 
+    margin-bottom: 20px; 
+    width:300px;
+}
+
+#e_success p {
+    padding:40px; 
+    max-width: 700px; 
+    margin:20px auto; 
+    text-align: left; 
+    background-color: #fcfcfc;
+    box-shadow: 0px 0px 6px #ddd;
+}
+
+
+/********** END EMAIL SUCCESS PAGE **********/
+
+/********** SHOPPING CART **********/
+
+#tulle_cart {
+    position:fixed;
+    top: 0;
+    right: 0;
+    padding:1px 25px 30px;
+    background-color: rgba(255,255,255,9.6);
+    z-index: 999;
+}
+
+#see_cart {
+    position:fixed;
+    top: 0;
+    right: 0;
+    padding:10px 15px;
+    background-color:rgba(89,11,133,.75);
+    z-index: 998;
+    color:#fff;
+    cursor: pointer;
+}
+
+#hide_cart {
+    margin-top:20px;
+    cursor: pointer;
+}
+
+#show_cart li {
+    padding:15px 0;
+    border-bottom: 1px solid #eee;
+}
+
+#show_cart li button {
+    padding:0px 8px 2px;
+    text-align: center;
+    background-color:rgba(135, 220, 189, .90);
+    border:none;
+    color:#fff;
+    margin-left: 5px;
+    border-radius: 3px;
+    font-weight: bold;
+}
+
+#show_cart li button:hover {
+   opacity: .8;
+}
+
+#clear_cart {
+    margin-top: 20px;
+    padding:5px 10px;
+    border-bottom: 1px solid #444;
+    border:none;
+    background-color:crimson;
+    color:#fff;
+}
+
+#clear_cart:hover, #hide_cart:hover, #see_cart:hover {
+   opacity: .8;
+}
+
+#checkout {
+    margin-top: 20px;
+    padding:5px 10px;
+    border-bottom: 1px solid #444;
+    border:none;
+    background-color:rgba(89,11,133,.75);
+    color:#fff;
+}
+
+#checkout:hover {
+   opacity: .8;
+}
+
+
+/********** END SHOPPING CART **********/

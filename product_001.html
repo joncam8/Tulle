@@ -3,13 +3,35 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title></title>
+        <title>Shopping | Multi Blue Coffe Cup</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
         <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/responsive.css">
     </head>
     
     <body>
         
     <div id="wrapper">
+        
+        <div id="see_cart">Show Cart <img src="images/cart_icon.png"><span class="count_cart"> 0 </span></div>
+        
+        <div id="tulle_cart" style="display: none;">
+                    <ul id="show_cart">
+                        <li> </li>
+                    </ul>    
+                    
+                    <div>You have <span class="count_cart">X</span> items in your cart.</div>
+                    
+                    <div>Total Cart: $<span id="total_cart"></span></div>
+            
+                    <button id="clear_cart">Clear Cart</button>
+                    <button id="checkout">Checkout</button>
+                    
+                    <div id="hide_cart">Hide Cart</div>
+                </div>
         
         <header id="header" style="background-image:none; background-color: #2c2c2c;">
             <div id="top_nav">
@@ -22,6 +44,21 @@
                     </ul>
                 </nav>
 
+                <div id="mobile_menu" onclick="myMenuBtn()">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+                
+                <nav id="navlist2">
+                    <ul>
+                        <li><a href="login.php">My Account</a></li>
+                        <li><a href="mycart_login.html">My Cart <img src="images/cart_icon.png"> 0 </a></li>
+                        <li><a href="login.php">LogIn</a></li>
+                        <li id="last"><a href="create_account.php">Create Account</a></li>
+                    </ul>
+                </nav>
+                
                 <div id="search_bar">
                     <input type="search" placeholder="Search" /><div id="search_container"><a href="#"><img id="search" src="images/search_icon.png" /></a></div>
                 </div>
@@ -37,9 +74,9 @@
         </header>
         
         <section id="product_section">
-            <div id="product_section_container">
-                <div id="product_view">
-                    <h2>Blue Coffee Cup</h2>
+            <div id="product_section_container" class="grid-container">
+                <div id="product_view" class="grid-item item1">
+                    <h2>Multi Blue Coffee Cup</h2>
                     
                     <div id="product_img">
                         <img id="product_large_001" src="images/coffeecup_001.png" /> 
@@ -47,14 +84,14 @@
                     
                     <div id="mini_product">
                         <ul id="box_pos_container">
-                            <li><div id="left_pos" class="box_pos"><img src="images/product_mini_center.png" /></div></li>
-                            <li><div id="center_pos" class="box_pos"><img src="images/product_mini_center.png" /></div></li>
-                            <li><div id="right_pos" class="box_pos"><img src="images/product_mini_center.png" /></div></li>
+                            <li><div id="left_pos" class="box_pos grid-item item3 "><img src="images/product_mini_center.png" /></div></li>
+                            <li><div id="center_pos" class="box_pos grid-item item4"><img src="images/product_mini_center.png" /></div></li>
+                            <li><div id="right_pos" class="box_pos grid-item item5"><img src="images/product_mini_center.png" /></div></li>
                         </ul> 
                     </div>
                 </div>
                 
-                <div id="product_info">
+                <div id="product_info" class="grid-item item2">
                     <h1>$15.00</h1>
                     
                         <div id="item_description_container">
@@ -63,7 +100,7 @@
                         </div>
                     
                         <div id="color_pick_container">
-                            <h3 id="color-pick_title">Choose Up To 3</h3>
+                            <h3 id="color_pick_title">Choose Up To 3</h3>
                         
                             <div id="color_container">
                                 <div id="red_box" class="color"></div> 
@@ -76,7 +113,7 @@
                             </div>   
                         </div>
                         
-                        <div id="quantity_container">
+                        <div id="quantity_container" style="padding-bottom: 20px;">
                             <h3>Quantity</h3>
                             
                             <ul>
@@ -86,8 +123,10 @@
                             </ul>
                         </div>
                     
-                        <button class="prod_add_btn"><a href="mycart_login.html">ADD TO CART</a></button>
-                        <button id="buy_btn"><a href="mycart_login.html">BUY</a></button>
+                    <div id="add_buy_btn">
+                        <button type="button" class="add_to_cart_btn" data-name="Coffee Cup" data-price="15.00" id="atc_btn_01"><a href="#" style="margin-left: -360px;">ADD TO CART</a></button>
+                        <button id="buy_btn"><a href="shop.html">Continue Shopping</a></button>
+                    </div>    
                 </div>
             </div>
         </section>
@@ -103,15 +142,13 @@
                         <li><a href="contact.html">Contact</a></li>
                         <li><a href="mycart_login.html">My Cart</a></li>
                         <li><a href="login.php">Login</a></li>
-                        <li><a href="create_account.php">Create Account</a></li>
-                    </ul>
+                     </ul>   
                 </div>
                 <div class="footer_info" id="acc">
                     <h3>Account</h3>
                     <ul>
                         <li><a href="login.php">My Account</a></li>
-                        <li><a href="login.php">Order History</a></li>
-                        <li><a href="login.php">Wish List</a></li>
+                        <li><a href="create_account.html">Create Account</a></li>
                         <li><a href="newsletter.html">Newsletter</a></li>
                     </ul>
                 </div>
@@ -129,11 +166,204 @@
             </div>
             <div id="bottom_footer">
                 <div id="bottom_footer_container">
-                    <div id="copyright">2019 Copyrights Reserved to Tangled U In Tulle | Designed &amp; Developed by Jonathan Cameron at <a href="http://www.camcolordesigns.com">Cam Color Designs</a></div>
+                    <div id="copyright">2019 Copyrights Reserved to Tangled Up In Tulle | Designed &amp; Developed by Jonathan Cameron at <a href="http://www.camcolordesigns.com" target="_blank">Cam Color Designs</a></div>
                 </div>    
             </div>
         </footer>
     </div>         
+    
+<script>
+
+function myMenuBtn() {
+    var mobileBtn = document.getElementById("navlist2");
+        if (mobileBtn.style.display === "block") {
+                mobileBtn.style.display = "none";
+        } else {
+                mobileBtn.style.display = "block";
+                }
+}   
+  
+ $("#see_cart").click(function() {
+     $("#tulle_cart").fadeToggle();
+ });  
+    
+ $("#hide_cart").click(function() {
+     $("#tulle_cart").fadeToggle();
+ });     
+    
+/***************************************
+jquery functions */
+    
+    $(".add_to_cart_btn").click(function(event) {
+        event.preventDefault();
+        var name = $(this).attr("data-name");
+        var price = $(this).attr("data-price");
+        
+        tulle_shoppingCart.addItemToCart(name, price, 1);
+        displayCart();
+    });
+     
+    $("#clear_cart").click(function(event) {
+        tulle_shoppingCart.clearCart();
+        displayCart();
+    });
+    
+    function displayCart() {
+        
+        var cartArray = tulle_shoppingCart.listCart();
+        var output = "";
+        
+        for (var i in cartArray) {
+            output += "<li>"
+                +cartArray[i].name
+                +"   "+cartArray[i].count
+                +" x "+cartArray[i].price
+                +" = "+cartArray[i].total
+                +" <button class='add_item' data-name='"
+                +cartArray[i].name+"'>+</button>"
+                +" <button class='subtract_item' data-name='"
+                +cartArray[i].name+"'>-</button>"
+                +" <button class='delete_item' data-name='"
+                +cartArray[i].name+"'>x</button>"
+                +"</li>";
+        }
+        $("#show_cart").html(output);
+        $(".count_cart").html(tulle_shoppingCart.countCart());
+        $("#total_cart").html(tulle_shoppingCart.totalCart());
+    }
+   
+    $("#show_cart").on("click", ".delete_item", function(event){
+        var name = $(this).attr("data-name");
+        tulle_shoppingCart.removeItemFromCartAll(name);
+        displayCart();
+    });
+    
+    $("#show_cart").on("click", ".subtract_item", function(event){
+        var name = $(this).attr("data-name");
+        tulle_shoppingCart.removeItemFromCart(name);
+        displayCart();
+    });
+    
+    $("#show_cart").on("click", ".add_item", function(event){
+        var name = $(this).attr("data-name");
+        tulle_shoppingCart.addItemToCart(name, 0, 1);
+        displayCart();
+    });
+    
+    $("#show_cart").on("change", ".item_count", function(event){
+        var name = $(this).attr("data-name");
+        var count = $(this).val();
+        tulle_shoppingCart.setCountForItem(name, count);
+    });
+    
+    // *********************************************
+    // Shopping Cart functions
+    
+    var tulle_shoppingCart = {};
+    tulle_shoppingCart.cart = [];
+    tulle_shoppingCart.Item = function(name, price, count) {
+        this.name = name
+        this.price = price
+        this.count = count
+    };
+    
+    tulle_shoppingCart.addItemToCart = function(name, price, count) {
+        for (var i in this.cart) {
+            if (this.cart[i].name === name) {
+                this.cart[i].count += count;
+                this.saveCart();
+                return;
+            }
+        }
+        
+        var item = new this.Item(name, price, count);
+        this.cart.push(item);
+        this.saveCart();
+    }
+    
+    tulle_shoppingCart.setCountForItem = function(name, count){
+        for (var i in this.cart) {
+            if (this.cart[i].name === name) {
+                this.cart[i].count = count;
+                break;
+                }
+        }
+        this.saveCart();
+    }
+    
+    tulle_shoppingCart.removeItemFromCart = function(name) { // Removes one item
+        for (var i in this.cart) {
+            if (this.cart[i].name === name) {
+                this.cart[i].count --; 
+                if (this.cart[i].count === 0) {
+                    this.cart.splice(i, 1);   
+                }
+                break;
+            }
+        }
+        this.saveCart();
+    } 
+    
+    tulle_shoppingCart.removeItemFromCartAll = function(name) { // removes all item name
+        for (var i in this.cart) {
+            if (this.cart[i].name === name) {
+                this.cart.splice(i, 1);
+                break;
+            }
+            
+        }
+        tulle_shoppingCart.saveCart();
+    }
+    
+    tulle_shoppingCart.clearCart = function() {
+        this.cart = [];
+        this.saveCart();
+    }
+    
+    tulle_shoppingCart.countCart = function() { // -> return total count
+        var totalCount = 0;
+        for (var i in this.cart) {
+            totalCount += this.cart[i].count;
+        }
+        
+        return totalCount;                   
+    }
+    
+    tulle_shoppingCart.totalCart = function() { // -> return total cost
+        var cartTotal = 0;
+        for (var i in this.cart) {
+            cartTotal += this.cart[i].price * this.cart[i].count;
+        }
+        
+        return cartTotal.toFixed(2);
+    }
+    
+    tulle_shoppingCart.listCart = function() { // -> array of Item
+        var cartCopy = [];
+        for (var i in this.cart) {
+            var item = this.cart[i];
+            var itemCopy = {};
+            for (var p in item) {
+                itemCopy[p] = item[p];
+            }
+            itemCopy.total = (item.price * item.count).toFixed(2);
+            cartCopy.push(itemCopy);
+        }
+        return cartCopy;
+    }
+    
+    tulle_shoppingCart.saveCart = function() {
+        localStorage.setItem("shoppingCart", JSON.stringify(this.cart));
+    }
+    
+    tulle_shoppingCart.loadCart = function() {
+        this.cart = JSON.parse(localStorage.getItem("shoppingCart"));
+    }
+    
+    tulle_shoppingCart.loadCart();
+    displayCart();   
+    
+</script>                 
         
     </body>
 </html
